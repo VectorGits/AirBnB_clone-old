@@ -44,25 +44,18 @@ class TestDocumentation(unittest.TestCase):
 
         self.assertIsNotNone(BaseModel.__doc__)
 
-    def test_init_method_docstring(self):
-        """Test if the __init__ method has a docstring."""
+    def test_base_model_methods_docstrings(self):
+        """Test if BaseModel methods have docstrings."""
+        methods_to_test = [
+            BaseModel.__init__,
+            BaseModel.__str__,
+            BaseModel.save,
+            BaseModel.to_dict
+            ]
 
-        self.assertIsNotNone(BaseModel.__init__.__doc__)
-
-    def test_str_method_docstring(self):
-        """Test if the __str__ method has a docstring."""
-
-        self.assertIsNotNone(BaseModel.__str__.__doc__)
-
-    def test_save_method_docstring(self):
-        """Test if the save method has a docstring."""
-
-        self.assertIsNotNone(BaseModel.save.__doc__)
-
-    def test_to_dict_method_docstring(self):
-        """Test if the to_dict method has a docstring."""
-
-        self.assertIsNotNone(BaseModel.to_dict.__doc__)
+        for method in methods_to_test:
+            with self.subTest(method=method):
+                self.assertIsNotNone(method.__doc__)
 
     def test_no_blank_lines_in_docstrings(self):
         """Test if there are no unnecessary blank lines in docstrings."""
@@ -128,6 +121,8 @@ class TestBaseModel(unittest.TestCase):
 
     def test_base_model_class(self):
         """Test BaseModel class."""
+
+        # check if the BaseModel class has the expected methods
         self.assertTrue(hasattr(BaseModel, "__init__"))
         self.assertTrue(hasattr(BaseModel, "__str__"))
         self.assertTrue(hasattr(BaseModel, "save"))
