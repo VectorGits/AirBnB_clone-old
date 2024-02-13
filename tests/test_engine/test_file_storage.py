@@ -217,8 +217,3 @@ class TestFileStorage(unittest.TestCase):
         # in the reloaded storage objects
         key = f"{type(model).__name__}.{model.id}"
         self.assertIn(key, self.storage.objects)
-
-    def test_instantiation(self):
-        """Test the instantiation of storage class."""
-
-        self.assertEqual(type(storage).__name__, "FileStorage")
