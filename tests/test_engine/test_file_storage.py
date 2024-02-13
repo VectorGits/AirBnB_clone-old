@@ -219,4 +219,6 @@ class TestFileStorage(unittest.TestCase):
         self.assertIn(key, self.storage.objects)
 
     def test_instantiation(self):
-        self.assertIsInstance(self.storage, FileStorage)
+        """Test the instantiation of storage class."""
+
+        self.assertEqual(type(storage).__name__, "FileStorage")
