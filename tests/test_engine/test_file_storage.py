@@ -2,7 +2,7 @@
 """
 The FileStorage Tests
 
-This file contains unit tests for the FileStorage module.
+This file contains unittests for the FileStorage module.
 
 To run the test, use the following command:
     python3 -m unittest tests.test_engine.test_file_storage
@@ -23,11 +23,11 @@ import pycodestyle
 # import the json module for handling JSON data
 import json
 
-# import the file_storage module from the models.engine package
-from models.engine import file_storage
-
 # import the FileStorage class from the file_storage module
 from models.engine.file_storage import FileStorage
+
+# import the file_storage module from the models.engine package
+from models.engine import file_storage
 
 # import the BaseModel class from the models.base_model module
 from models.base_model import BaseModel

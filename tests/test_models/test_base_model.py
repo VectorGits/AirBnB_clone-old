@@ -2,7 +2,7 @@
 """
 The BaseModel Tests
 
-This file contains unit tests for the BaseModel class models package.
+This file contains unittests for the BaseModel class models package.
 
 To run the test, use the following command:
     python3 -m unittest tests.test_models.test_base_model
@@ -23,11 +23,11 @@ import pycodestyle
 # import the datetime class from the datetime mod for working with timestamps
 from datetime import datetime
 
-# import the base_model module from the models package
-from models import base_model
-
 # import the BaseModel class from the base_model module
 from models.base_model import BaseModel
+
+# import the base_model module from the models package
+from models import base_model
 
 
 class TestDocumentation(unittest.TestCase):
